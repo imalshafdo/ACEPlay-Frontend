@@ -124,7 +124,7 @@
 <script setup>
 import { computed, ref } from 'vue'
 
-const { data: apiResponse } = await useFetch('http://localhost:5000/api/public/casinos')
+const { data: apiResponse } = await useFetch('https://aceplay-admin-backend-production-1c28.up.railway.app/api/public/casinos')
 
 const casinos = computed(() => apiResponse.value?.data || [])
 

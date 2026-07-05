@@ -1,7 +1,7 @@
 <script setup>
 import { navigateTo } from '#app'
 
-const { data: casinosResponse } = await useFetch('http://localhost:5000/api/public/casinos')
+const { data: casinosResponse } = await useFetch('https://aceplay-admin-backend-production-1c28.up.railway.app/api/public/casinos')
 const casinos = casinosResponse.value?.data || []
 if (casinos.length > 0) {
   const firstSlug = casinos[0].name.toLowerCase().replace(/\s+/g, '-')

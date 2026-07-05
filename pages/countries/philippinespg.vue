@@ -245,7 +245,7 @@ const resetFilters = () => {
 }
 
 // Dynamically fetch casinos from local backend API
-const { data: apiResponse } = await useFetch('http://localhost:5000/api/public/casinos')
+const { data: apiResponse } = await useFetch('https://aceplay-admin-backend-production-1c28.up.railway.app/api/public/casinos')
 
 const casinos = computed(() => {
   const raw = apiResponse.value?.data || []

@@ -344,13 +344,13 @@ const route = useRoute()
 const slug = computed(() => route.params.slug || '')
 
 // Fetch all public data from local backend API
-const { data: siteSettingsResponse } = await useFetch('http://localhost:5000/api/public/site-settings')
-const { data: navResponse } = await useFetch('http://localhost:5000/api/public/navigation')
-const { data: bannersResponse } = await useFetch('http://localhost:5000/api/public/banners')
-const { data: bigWinsResponse } = await useFetch('http://localhost:5000/api/public/big-wins')
-const { data: popularGamesResponse } = await useFetch('http://localhost:5000/api/public/popular-games')
-const { data: promotionsResponse } = await useFetch('http://localhost:5000/api/public/promotions')
-const { data: casinosResponse } = await useFetch('http://localhost:5000/api/public/casinos')
+const { data: siteSettingsResponse } = await useFetch('https://aceplay-admin-backend-production-1c28.up.railway.app/api/public/site-settings')
+const { data: navResponse } = await useFetch('https://aceplay-admin-backend-production-1c28.up.railway.app/api/public/navigation')
+const { data: bannersResponse } = await useFetch('https://aceplay-admin-backend-production-1c28.up.railway.app/api/public/banners')
+const { data: bigWinsResponse } = await useFetch('https://aceplay-admin-backend-production-1c28.up.railway.app/api/public/big-wins')
+const { data: popularGamesResponse } = await useFetch('https://aceplay-admin-backend-production-1c28.up.railway.app/api/public/popular-games')
+const { data: promotionsResponse } = await useFetch('https://aceplay-admin-backend-production-1c28.up.railway.app/api/public/promotions')
+const { data: casinosResponse } = await useFetch('https://aceplay-admin-backend-production-1c28.up.railway.app/api/public/casinos')
 
 // Raw lists from responses
 const siteSettingsList = computed(() => siteSettingsResponse.value?.data || [])
