@@ -5,10 +5,10 @@ export default defineNuxtPlugin(() => {
   const originalFetch = globalThis.$fetch
   if (originalFetch) {
     globalThis.$fetch = (request, opts) => {
-      if (typeof request === 'string' && request.startsWith('aceplay-admin-backend-production-1c28.up.railway.appapi')) {
+      if (typeof request === 'string' && request.startsWith('https://aceplay-admin-backend-production-1c28.up.railway.app')) {
         // Rewrite localhost:5000 requests to the docker backend container name
-        const internalUrl = process.env.BACKEND_INTERNAL_URL || 'aceplay-admin-backend-production-1c28.up.railway.appapi'
-        request = request.replace('aceplay-admin-backend-production-1c28.up.railway.appapi', internalUrl)
+        const internalUrl = process.env.BACKEND_INTERNAL_URL || 'https://aceplay-admin-backend-production-1c28.up.railway.app'
+        request = request.replace('https://aceplay-admin-backend-production-1c28.up.railway.app', internalUrl)
       }
       return originalFetch(request, opts)
     }
